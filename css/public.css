@@ -125,3 +125,7 @@ textarea{
 .text-center{
 	text-align: center;
 }
+
+.fix{
+	position: fixed;
+}
