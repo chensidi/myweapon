@@ -1,0 +1,34 @@
+进入bin，执行mysql -h localhost/127.0.0.1 -u root -p
+password root
+create database SQL character set utf8
+use SQL;
+1.创建数据表
+create table test(
+	id int(10) unsigned not null auto_increment primary key,
+	name varchar(10) character set utf8,
+	age int(10)
+	)
+2.插入内容
+insert into test(id,name,age) value(1,'jacky',56);
+insert into test(id,name,age) value(2,'cheung',55);
+3.更新内容
+update test set name='cheung' where id='2';
+4.查看内容
+select * from test where name='cheung';
+5.删除内容
+delete * from test where name='jacky';
+6.增加列
+alter table test add songs char (10) after age;
+7.删除列
+alter table test drop other;
+8.修改列名字
+alter table test change songs song char(20);
+9.重命名表
+alter table test rename myfirstSQL;
+10.查看所有数据表
+show tables
+11.删除整张表
+drop table myfirstSQL;
+12.删除整个数据库
+drop database jackycheung;
+	

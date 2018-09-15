@@ -1,0 +1,11 @@
+1.http://chensidi.51zuopin.com
+2.http://jackycheung.51zuopin.com/index.html
+3.http://xiaogeshen.51zuopin.com
+4.http://www.wbooki.com
+5.http://www.doonl.com
+6.网易播放界面
+7.game
+8.http://jx.jqaaa.com/index.php?v= 播放地址
+9.通用接口：http://jqaaa.com/jx.php?url=播放地址
+
+淘宝镜像：npm install -g cnpm –registry=https://registry.npm.taobao.org

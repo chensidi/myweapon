@@ -1,0 +1,105 @@
+DOM：
+1.w3c标准
+2.定义访问HTML和xml文档标准
+3.文档对象模型是，中立于平台和语言的接口，它允许程序和脚本动态访问和更新文档的内容，结构和样式。
+
+HTML DOM：
+HTML的标准对象模型，标准编程接口，w3c标准
+
+DOM节点：
+w3c的HTML DOM标准来讲，HTML所有内容都是节点
+整个文档document是一个文档节点
+每个HTML是元素节点
+文本节点
+属性节点
+注释节点
+
+闭包：
+外层函数嵌套内层函数，执行完后将内层函数return出去，此时内层函数保存一切外层函数执行期间定义的各种变量，并能自由使用。这是一个类似遗传学的问题，外层函数好比父亲，内层函数好比儿子，外层函数定义的各种变量就像是基因，内层函数会携带这些基因出去。简言之，当内部函数被保存到了外部，那么就一定会形成闭包。
+闭包特点：
+由于外层函数的变量保存到了闭包中，且只能由闭包使用，那么就不会对其他外部的同名变量造成污染，具有私密性，但过多的闭包会使得内存得不到释放，造成内存泄漏。
+
+子类继承父类，必须在constructor里面使用super，并且在super之后才能使用this，super只能在constructor里使用。
+正则：
+var str = '2013-6-7';
+
+var re = /(\d+)(-)/g;
+str = str.replace(re,function($0,$1,$2){
+    
+      
+        console.log('$0='+$0);
+	
+	console.log('$1='+$1);  
+	console.log('$2='+$2);
+    
+	return $1 + '.';  //分别返回2013.   6.
+    
+
+});
+
+nodejs的cheerio解决乱码
+var $ = cheerio.load(html,{decodeEntities: false});
+mysql的id指定自增位置：alter table xiaoshuo AUTO_INCREMENT=49;//从49位开始增长
+
+es6数组fill方法，接收三个参数arr.fill(tag,start,end);//不包括end
+keys(),values(),entries(),for...of,map,includes(),find((val,index,arr)=>{}),findIndex(),Array.from([],f()),Array.of(），every((item,index,arr)=>{}),some((item,index,arr)=>{}),filter((x)=>{...})
+flat(num);
+Object.keys(obj),Object.values(obj),Object.entries(obj),Object.assign({},tag1,tag2)
+
+isNaN('NaN') ==> true
+
+js的安全数 2^-53----2^53
+Math.trunc(),取整数部分，若无法取到，返回NaN
+
+String.fromCharCode() //数字转换为对应字母
+str.charCodeAt() //字符（串）转换为对应编码数字
+str.includes(strs,num),str.startsWith(strs,num),str.endsWith(strs,num);
+str.repeat(num) //如果repeat的参数是负数或者Infinity，会报错。小数则取整
+str.padStart(len,srts),str.padEnd(len,strs)
+
+http://www.ruanyifeng.com/blog/2016/01/babel.html //babel的官网
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.4.4/babel.min.js"></script>
+<script src='./main.js'></script>
+<script>
+	import xx from './mian.js'
+</script>
+
+
+百度引擎关联词 https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=you
+https://www.baidu.com/su?&wd=${kw}
+百度搜索 https://www.baidu.com/s?wd=you
+hao123 初始化搜索结果 https://www.hao123.com/sugdata_s4.json
+
+
+
+react 路由：
+在index.js里
+import {BrowserRouter,Route} from 'react-router-dom';
+import Home from './home.js';
+import Content from './content.js';
+import About from './About.jsx';
+
+ReactDOM.render(
+    <div>
+	<BrowserRouter>
+    	    <Route path='/Home' component={Home} />  
+        </BrowserRouter>
+        <BrowserRouter>
+    	    <Route path='/Content' component={Content} />  
+    	</BrowserRouter>
+    	<BrowserRouter>
+    		<Route path='/About' component={About} />  
+    	</BrowserRouter>
+    </div>
+    , document.getElementById('root'));
+
+响应式字体
+html { font-size:100px; }
+@media(max-width:540px){ html { font-size:84.375px; } } /*Android常用宽度*/
+@media(max-width:480px){ html { font-size:75px; } }		/*Android常用宽度*/
+@media(max-width:414px){ html { font-size:64.69px; } }  /*i6Plus,i7Plus宽度*/  
+@media(max-width:375px){ html { font-size:58.59px; } }	/*i6,i7宽度*/
+@media(max-width:360px){ html { font-size:56.25px; } }	/*Android常用宽度*/
+@media(max-width:320px){ html { font-size:50px; } }		/*i5宽度*/
+
+https://intra.cn.alphanetworks.com/
