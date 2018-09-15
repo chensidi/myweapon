@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+	<link rel="stylesheet" type="text/css" href="/layui/css/layui.css">
+	<style type="text/css">
+		.layui-input{
+			width: 50%;
+		}
+		#ul{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<label class="layui-form-label">网址</label>
+    <div class="layui-input-block">
+      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入网址" class="layui-input" id="url">
+    </div>
+    <label class="layui-form-label">歌名</label>
+    <div class="layui-input-block">
+      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入歌名" class="layui-input" id="song">
+    </div>
+    <button class="layui-btn" style="margin-left: 10px;" id="get">获取</button>
+   	<br>
+   	<label class="layui-form-label">网址</label>
+    <div class="layui-input-block">
+      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入网址" class="layui-input" id="url2">
+    </div>
+    <label class="layui-form-label">MV</label>
+    <div class="layui-input-block">
+      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入歌名" class="layui-input" id="mv">
+    </div>
+    <button class="layui-btn" style="margin-left: 10px;" id="getmv">获取MV</button>
+    <br>
+    <label class="layui-form-label">网址</label>
+    <div class="layui-input-block">
+      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入网址" class="layui-input" id="imgurl">
+    </div>
+    <label class="layui-form-label">图片</label>
+    <div class="layui-input-block">
+      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入mm的名字" class="layui-input" id="mmName">
+    </div>
+    <button class="layui-btn" style="margin-left: 10px;" id="getimg">获取图片</button>
+    <br>
+    <label class="layui-form-label">网址</label>
+    <div class="layui-input-block">
+      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入网址" class="layui-input" id="dturl">
+    </div>
+    <button class="layui-btn" style="margin-left: 10px;" id="tosql">入库</button>
+    <br>
+    <label class="layui-form-label">网址</label>
+    <div class="layui-input-block">
+      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入网址" class="layui-input" id="bigimgurl">
+    </div>
+    <button class="layui-btn" style="margin-left: 10px;" id="bigtosql">big入库</button>
+    <br>
+    <label class="layui-form-label">lrc网址</label>
+    <div class="layui-input-block">
+      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入网址" class="layui-input" id="lrcurl">
+    </div>
+    <button class="layui-btn" style="margin-left: 10px;" id="lrctosql">lrc入库</button>
+    <br>
+    <label class="layui-form-label">singer</label>
+    <div class="layui-input-block">
+      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入网址" class="layui-input" id="singer">
+    </div>
+    <button class="layui-btn" style="margin-left: 10px;" id="singerbtn">singer入库</button>
+    <br>
+  	<label class="layui-form-label">页码</label>
+    <div class="layui-input-block">
+      <input type="number" name="title" lay-verify="title" autocomplete="off" placeholder="请输入页码" class="layui-input" id="page">
+    </div>
+     <button class="layui-btn" style="margin-left: 10px;" id="dqd">dqd</button>
+     <button class="layui-btn" style="margin-left: 10px;" id="dqd3">dqd3</button>
+     <br>
+     <label class="layui-form-label">新闻</label>
+    <div class="layui-input-block">
+      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入新闻网址" class="layui-input" id="news">
+    </div>
+     <button class="layui-btn" style="margin-left: 10px;" id="dqd2">dqd</button>
+     <br>
+     <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入关键字" class="layui-input" id="kw">
+      <!-- <button class="layui-btn" style="margin-left: 10px;" id="bd">baidu</button> -->
+<ul class="layui-nav layui-nav-tree layui-bg-cyan layui-inline" lay-filter="demo" id="ul">
+  <li class="layui-nav-item layui-nav-itemed">
+    <!-- <a href="javascript:;">默认展开</a> -->
+    <dl class="layui-nav-child">
+    </dl>
+  </li>
+</ul> 
+</body>
+</html>
+<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js">
+</script>
+<script src="/layui/layui.js"></script>
+<script>
+layui.use(['element','layer'], function(){
+  // var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+  // var layer = layui.layer;
+  // //监听导航点击
+  // element.on('nav(demo)', function(elem){
+  //   //console.log(elem)
+  //   layer.msg(elem.text());
+  // });
+});
+</script>
+<script>
+	$('#get').click(function(){
+		var url = $('#url').val(),
+			songName = $('#song').val();
+		if(url!==''&&songName!==''){
+			$.get(`/getOne?url=${url}&songName=${songName}`,(dt)=>{
+				console.log(dt);
+			})
+		}
+	})
+	$('#getmv').click(function(){
+		var url2 = $('#url2').val(),
+			mvName = $('#mv').val();
+		if(url2!==''&&mvName!==''){
+			$.post(`/getmv`,{url2,mvName},(dt)=>{
+				console.log(dt);
+			})
+		}
+	})
+	$('#getimg').click(function(){
+		var picurl = $('#imgurl').val(),
+			mmName = $('#mmName').val();
+		if(picurl!==''&&mmName!==''){
+			$.post(`/getimg`,{picurl,mmName},(dt)=>{
+				console.log(dt);
+			})
+		}
+	})
+	$('#tosql').click(function(){
+		var dturl = $('#dturl').val();
+		$.post(`/tosql`,{dturl},(dt)=>{
+			console.log(dt);
+		})
+	})
+	$('#bigtosql').click(function(){
+		var bigimgurl = $('#bigimgurl').val();
+		$.post(`/bigtosql`,{bigimgurl},(dt)=>{
+			console.log(dt);
+		})
+	})
+	$('#lrctosql').click(function(){
+		var lrcurl = $('#lrcurl').val();
+		$.post(`/getlrcurl`,{lrcurl},(dt)=>{
+			console.log(dt);
+		})
+	})
+	$('#singerbtn').click(function(){
+		var singer = $('#singer').val();
+		$.post(`/getsinger`,{singer},(dt)=>{
+			console.log(dt);
+		})
+	})
+	$('#dqd').click(function(){
+		var page = $('#page').val();
+		$.get('/dqd?page='+page,(dt)=>{
+			console.log(dt);
+		})
+	})
+	$('#dqd2').click(function(){
+		var url = $('#news').val();
+		$.post('/news',{url},(dt)=>{
+			console.log(dt);
+		})
+	})
+	$('#dqd3').click(function(){
+		var page = $('#page').val();
+		$.get('/dqd3?page='+page,(dt)=>{
+			console.log(dt);
+		})
+	})
+	$('#bd').click(function(){
+		var kw = $('#kw').val();
+		$.post('/baidu',{kw},(dt)=>{
+			var tag = dt.match(/(?<=.+s\:).+(?=\}\))/g);
+			console.log(JSON.parse(tag[0]));
+		})
+	})
+	 $('#kw').keyup(function(){
+	 	var kw = $(this).val();
+	 	if(kw==''){
+	 		return;
+	 	}
+		$.post('/baidu',{kw},(dt)=>{
+			$('.layui-nav-child').empty();
+			var tag = dt.match(/(?<=.+s\:).+(?=\}\))/g);
+			// console.log(JSON.parse(tag[0]));
+			var arr = JSON.parse(tag[0]);
+			var str = '';
+			arr.map((obj)=>{
+				str += `<dd><a href="https://www.baidu.com/s?word=${obj}" target="_blank">${obj}</a></dd>`;
+			})
+			$('#ul').show();
+			$('.layui-nav-child').append(str);
+		})
+	 })
+	 var key = true;
+	 $('#kw').blur(function(){
+	 	if(key){
+	 		$('#ul').hide();	
+	 	}
+	 		
+	 })
+	 $('#kw').focus(function(){
+	 	$('#ul').show();
+	 })
+	 $('.layui-nav-child').mousedown(function(){
+	 	key = false;
+	 	$('#ul').show();
+	 })
+	 $('.layui-nav-child').mouseleave(function(){
+	 	key = true;
+	 })
+</script>

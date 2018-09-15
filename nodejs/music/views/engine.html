@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>engine</title>
+	<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js">
+	</script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<input type="text" id="ipt">
+</body>
+</html>
+<script>
+	$('#ipt').focus(function(){
+		$.get('/getinitjson',(dt)=>{
+			console.log(dt)
+		})
+	})
+</script>
