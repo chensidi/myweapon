@@ -1,0 +1,42 @@
+1、安装框架和相应模块
+npm init   //初始化得到pakage.json 配置文件
+npm install express --save        安装express框架
+npm install body-parser --save     安装post请求模块
+npm install cookie-parser --save     cookie模块
+npm install multer --save            文件上传模块
+npm install ejs --save             安装ejs模板
+npm install express-session          session模块
+
+
+2、实例化express框架
+var express = require("express")//引入exprss模块
+var app = express(); //实例化express
+
+
+3.配置post请求到请全体的body属性上
+var urlencodedParser = body.urlencoded({ extended: false });//解析post数据      
+app.use(urlencodedParser);
+
+4、配置静态文件模板引擎
+app.use(express.static("static"))//设置静态文件目录
+app.set('views', __dirname + '/views');
+app.engine('.html', require('ejs').__express);//设置模板后缀名  
+app.set('view engine', 'ejs');
+
+
+5、设置cookie 
+var cookieparse = require('cookie-parse')
+app.use(cookieParser())
+app.get('/',function(req,res){
+	console.log(req.cookies)
+})
+
+6、设置session
+var session = reuire('express-session')
+app.use(cookieparser('sessiontest'))
+app.use(session({
+	secret:'sessiontest',//与cookie的一直
+	resave:true,
+	saveUninialized:true,
+	cookie: {maxAge: 1000*60*60}  //1小时session失效
+}))

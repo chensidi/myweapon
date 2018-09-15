@@ -1,0 +1,16 @@
+在config目录下面的index.js目录下面添加代理
+module.exports = {
+  dev: {
+
+    // Paths
+    assetsSubDirectory: 'static',
+    assetsPublicPath: '/',
+proxyTable: {
+    	'/api':{  // api为匹配项
+        target:'http://localhost:8000', // 设置代理目标
+        changeOrigin: true,
+        pathRewrite: {  // 重写路径
+          '^/api': '/'
+        }
+    	}
+    },
