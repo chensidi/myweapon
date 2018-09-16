@@ -103,3 +103,21 @@ html { font-size:100px; }
 @media(max-width:320px){ html { font-size:50px; } }		/*i5¿í¶È*/
 
 https://intra.cn.alphanetworks.com/
+
+$(document).click(function(e){
+	
+	if($(e.target).closest('#currentFullYear').length > 0){
+		
+		$('#searchTab').show();
+		
+		//console.log(666)
+;
+	}else{
+	
+		$('#searchTab').hide();
+		
+		//console.log(777)
+;	
+	}
+
+})
