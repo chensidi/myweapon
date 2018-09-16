@@ -9,3 +9,5 @@
 9.通用接口：http://jqaaa.com/jx.php?url=播放地址
 
 淘宝镜像：npm install -g cnpm –registry=https://registry.npm.taobao.org
+
+资源1：http://www.pornhub.me.uk/
