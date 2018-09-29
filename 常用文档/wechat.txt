@@ -1,0 +1,38 @@
+onPullDownRefresh和scroll-view不能同时使用
+上拉加载 // 上拉加载回调接口
+    onReachBottom: function () {
+    },
+下拉刷新 json中配置 "window": {
+    "enablePullDownRefresh": true
+  }
+	// 下拉刷新回调接口
+    onPullDownRefresh: function () {
+        // do somthing
+	wx.stopPullDownRefresh()
+    },
+
+onLoad(Object query)
+页面加载时触发。一个页面只会调用一次，可以在 onLoad 的参数中获取打开当前页面路径中的参数。
+
+onShow()
+页面显示/切入前台时触发。
+
+onReady()
+页面初次渲染完成时触发。一个页面只会调用一次，代表页面已经准备妥当，可以和视图层进行交互。
+
+注意：对界面内容进行设置的 API 如wx.setNavigationBarTitle，请在onReady之后进行。详见生命周期
+
+onHide()
+页面隐藏/切入后台时触发。 如 navigateTo 或底部 tab 切换到其他页面，小程序切入后台等。
+
+onUnload()
+页面卸载时触发。如redirectTo或navigateBack到其他页面时。
+
+<view bindtap='click' data-msg='info'>666</view>
+click:function(e){
+	//info === e.target.dataset.msg
+}
+<input bindtap='input' />
+input:function(e){
+	//e.details.value
+}
