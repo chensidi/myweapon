@@ -1,26 +1,26 @@
-DOM£º
-1.w3c±ê×¼
-2.¶¨Òå·ÃÎÊHTMLºÍxmlÎÄµµ±ê×¼
-3.ÎÄµµ¶ÔÏóÄ£ĞÍÊÇ£¬ÖĞÁ¢ÓÚÆ½Ì¨ºÍÓïÑÔµÄ½Ó¿Ú£¬ËüÔÊĞí³ÌĞòºÍ½Å±¾¶¯Ì¬·ÃÎÊºÍ¸üĞÂÎÄµµµÄÄÚÈİ£¬½á¹¹ºÍÑùÊ½¡£
+DOMï¼š
+1.w3cæ ‡å‡†
+2.å®šä¹‰è®¿é—®HTMLå’Œxmlæ–‡æ¡£æ ‡å‡†
+3.æ–‡æ¡£å¯¹è±¡æ¨¡å‹æ˜¯ï¼Œä¸­ç«‹äºå¹³å°å’Œè¯­è¨€çš„æ¥å£ï¼Œå®ƒå…è®¸ç¨‹åºå’Œè„šæœ¬åŠ¨æ€è®¿é—®å’Œæ›´æ–°æ–‡æ¡£çš„å†…å®¹ï¼Œç»“æ„å’Œæ ·å¼ã€‚
 
-HTML DOM£º
-HTMLµÄ±ê×¼¶ÔÏóÄ£ĞÍ£¬±ê×¼±à³Ì½Ó¿Ú£¬w3c±ê×¼
+HTML DOMï¼š
+HTMLçš„æ ‡å‡†å¯¹è±¡æ¨¡å‹ï¼Œæ ‡å‡†ç¼–ç¨‹æ¥å£ï¼Œw3cæ ‡å‡†
 
-DOM½Úµã£º
-w3cµÄHTML DOM±ê×¼À´½²£¬HTMLËùÓĞÄÚÈİ¶¼ÊÇ½Úµã
-Õû¸öÎÄµµdocumentÊÇÒ»¸öÎÄµµ½Úµã
-Ã¿¸öHTMLÊÇÔªËØ½Úµã
-ÎÄ±¾½Úµã
-ÊôĞÔ½Úµã
-×¢ÊÍ½Úµã
+DOMèŠ‚ç‚¹ï¼š
+w3cçš„HTML DOMæ ‡å‡†æ¥è®²ï¼ŒHTMLæ‰€æœ‰å†…å®¹éƒ½æ˜¯èŠ‚ç‚¹
+æ•´ä¸ªæ–‡æ¡£documentæ˜¯ä¸€ä¸ªæ–‡æ¡£èŠ‚ç‚¹
+æ¯ä¸ªHTMLæ˜¯å…ƒç´ èŠ‚ç‚¹
+æ–‡æœ¬èŠ‚ç‚¹
+å±æ€§èŠ‚ç‚¹
+æ³¨é‡ŠèŠ‚ç‚¹
 
-±Õ°ü£º
-Íâ²ãº¯ÊıÇ¶Ì×ÄÚ²ãº¯Êı£¬Ö´ĞĞÍêºó½«ÄÚ²ãº¯Êıreturn³öÈ¥£¬´ËÊ±ÄÚ²ãº¯Êı±£´æÒ»ÇĞÍâ²ãº¯ÊıÖ´ĞĞÆÚ¼ä¶¨ÒåµÄ¸÷ÖÖ±äÁ¿£¬²¢ÄÜ×ÔÓÉÊ¹ÓÃ¡£ÕâÊÇÒ»¸öÀàËÆÒÅ´«Ñ§µÄÎÊÌâ£¬Íâ²ãº¯ÊıºÃ±È¸¸Ç×£¬ÄÚ²ãº¯ÊıºÃ±È¶ù×Ó£¬Íâ²ãº¯Êı¶¨ÒåµÄ¸÷ÖÖ±äÁ¿¾ÍÏñÊÇ»ùÒò£¬ÄÚ²ãº¯Êı»áĞ¯´øÕâĞ©»ùÒò³öÈ¥¡£¼òÑÔÖ®£¬µ±ÄÚ²¿º¯Êı±»±£´æµ½ÁËÍâ²¿£¬ÄÇÃ´¾ÍÒ»¶¨»áĞÎ³É±Õ°ü¡£
-±Õ°üÌØµã£º
-ÓÉÓÚÍâ²ãº¯ÊıµÄ±äÁ¿±£´æµ½ÁË±Õ°üÖĞ£¬ÇÒÖ»ÄÜÓÉ±Õ°üÊ¹ÓÃ£¬ÄÇÃ´¾Í²»»á¶ÔÆäËûÍâ²¿µÄÍ¬Ãû±äÁ¿Ôì³ÉÎÛÈ¾£¬¾ßÓĞË½ÃÜĞÔ£¬µ«¹ı¶àµÄ±Õ°ü»áÊ¹µÃÄÚ´æµÃ²»µ½ÊÍ·Å£¬Ôì³ÉÄÚ´æĞ¹Â©¡£
+é—­åŒ…ï¼š
+å¤–å±‚å‡½æ•°åµŒå¥—å†…å±‚å‡½æ•°ï¼Œæ‰§è¡Œå®Œåå°†å†…å±‚å‡½æ•°returnå‡ºå»ï¼Œæ­¤æ—¶å†…å±‚å‡½æ•°ä¿å­˜ä¸€åˆ‡å¤–å±‚å‡½æ•°æ‰§è¡ŒæœŸé—´å®šä¹‰çš„å„ç§å˜é‡ï¼Œå¹¶èƒ½è‡ªç”±ä½¿ç”¨ã€‚è¿™æ˜¯ä¸€ä¸ªç±»ä¼¼é—ä¼ å­¦çš„é—®é¢˜ï¼Œå¤–å±‚å‡½æ•°å¥½æ¯”çˆ¶äº²ï¼Œå†…å±‚å‡½æ•°å¥½æ¯”å„¿å­ï¼Œå¤–å±‚å‡½æ•°å®šä¹‰çš„å„ç§å˜é‡å°±åƒæ˜¯åŸºå› ï¼Œå†…å±‚å‡½æ•°ä¼šæºå¸¦è¿™äº›åŸºå› å‡ºå»ã€‚ç®€è¨€ä¹‹ï¼Œå½“å†…éƒ¨å‡½æ•°è¢«ä¿å­˜åˆ°äº†å¤–éƒ¨ï¼Œé‚£ä¹ˆå°±ä¸€å®šä¼šå½¢æˆé—­åŒ…ã€‚
+é—­åŒ…ç‰¹ç‚¹ï¼š
+ç”±äºå¤–å±‚å‡½æ•°çš„å˜é‡ä¿å­˜åˆ°äº†é—­åŒ…ä¸­ï¼Œä¸”åªèƒ½ç”±é—­åŒ…ä½¿ç”¨ï¼Œé‚£ä¹ˆå°±ä¸ä¼šå¯¹å…¶ä»–å¤–éƒ¨çš„åŒåå˜é‡é€ æˆæ±¡æŸ“ï¼Œå…·æœ‰ç§å¯†æ€§ï¼Œä½†è¿‡å¤šçš„é—­åŒ…ä¼šä½¿å¾—å†…å­˜å¾—ä¸åˆ°é‡Šæ”¾ï¼Œé€ æˆå†…å­˜æ³„æ¼ã€‚
 
-×ÓÀà¼Ì³Ğ¸¸Àà£¬±ØĞëÔÚconstructorÀïÃæÊ¹ÓÃsuper£¬²¢ÇÒÔÚsuperÖ®ºó²ÅÄÜÊ¹ÓÃthis£¬superÖ»ÄÜÔÚconstructorÀïÊ¹ÓÃ¡£
-ÕıÔò£º
+å­ç±»ç»§æ‰¿çˆ¶ç±»ï¼Œå¿…é¡»åœ¨constructoré‡Œé¢ä½¿ç”¨superï¼Œå¹¶ä¸”åœ¨superä¹‹åæ‰èƒ½ä½¿ç”¨thisï¼Œsuperåªèƒ½åœ¨constructoré‡Œä½¿ç”¨ã€‚
+æ­£åˆ™ï¼š
 var str = '2013-6-7';
 
 var re = /(\d+)(-)/g;
@@ -32,32 +32,32 @@ str = str.replace(re,function($0,$1,$2){
 	console.log('$1='+$1);  
 	console.log('$2='+$2);
     
-	return $1 + '.';  //·Ö±ğ·µ»Ø2013.   6.
+	return $1 + '.';  //åˆ†åˆ«è¿”å›2013.   6.
     
 
 });
 
-nodejsµÄcheerio½â¾öÂÒÂë
+nodejsçš„cheerioè§£å†³ä¹±ç 
 var $ = cheerio.load(html,{decodeEntities: false});
-mysqlµÄidÖ¸¶¨×ÔÔöÎ»ÖÃ£ºalter table xiaoshuo AUTO_INCREMENT=49;//´Ó49Î»¿ªÊ¼Ôö³¤
+mysqlçš„idæŒ‡å®šè‡ªå¢ä½ç½®ï¼šalter table xiaoshuo AUTO_INCREMENT=49;//ä»49ä½å¼€å§‹å¢é•¿
 
-es6Êı×éfill·½·¨£¬½ÓÊÕÈı¸ö²ÎÊıarr.fill(tag,start,end);//²»°üÀ¨end
-keys(),values(),entries(),for...of,map,includes(),find((val,index,arr)=>{}),findIndex(),Array.from([],f()),Array.of(£©£¬every((item,index,arr)=>{}),some((item,index,arr)=>{}),filter((x)=>{...})
+es6æ•°ç»„fillæ–¹æ³•ï¼Œæ¥æ”¶ä¸‰ä¸ªå‚æ•°arr.fill(tag,start,end);//ä¸åŒ…æ‹¬end
+keys(),values(),entries(),for...of,map,includes(),find((val,index,arr)=>{}),findIndex(),Array.from([],f()),Array.of(ï¼‰ï¼Œevery((item,index,arr)=>{}),some((item,index,arr)=>{}),filter((x)=>{...})
 flat(num);
 Object.keys(obj),Object.values(obj),Object.entries(obj),Object.assign({},tag1,tag2)
 
 isNaN('NaN') ==> true
 
-jsµÄ°²È«Êı 2^-53----2^53
-Math.trunc(),È¡ÕûÊı²¿·Ö£¬ÈôÎŞ·¨È¡µ½£¬·µ»ØNaN
+jsçš„å®‰å…¨æ•° 2^-53----2^53
+Math.trunc(),å–æ•´æ•°éƒ¨åˆ†ï¼Œè‹¥æ— æ³•å–åˆ°ï¼Œè¿”å›NaN
 
-String.fromCharCode() //Êı×Ö×ª»»Îª¶ÔÓ¦×ÖÄ¸
-str.charCodeAt() //×Ö·û£¨´®£©×ª»»Îª¶ÔÓ¦±àÂëÊı×Ö
+String.fromCharCode() //æ•°å­—è½¬æ¢ä¸ºå¯¹åº”å­—æ¯
+str.charCodeAt() //å­—ç¬¦ï¼ˆä¸²ï¼‰è½¬æ¢ä¸ºå¯¹åº”ç¼–ç æ•°å­—
 str.includes(strs,num),str.startsWith(strs,num),str.endsWith(strs,num);
-str.repeat(num) //Èç¹ûrepeatµÄ²ÎÊıÊÇ¸ºÊı»òÕßInfinity£¬»á±¨´í¡£Ğ¡ÊıÔòÈ¡Õû
+str.repeat(num) //å¦‚æœrepeatçš„å‚æ•°æ˜¯è´Ÿæ•°æˆ–è€…Infinityï¼Œä¼šæŠ¥é”™ã€‚å°æ•°åˆ™å–æ•´
 str.padStart(len,srts),str.padEnd(len,strs)
 
-http://www.ruanyifeng.com/blog/2016/01/babel.html //babelµÄ¹ÙÍø
+http://www.ruanyifeng.com/blog/2016/01/babel.html //babelçš„å®˜ç½‘
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.4.4/babel.min.js"></script>
 <script src='./main.js'></script>
 <script>
@@ -65,15 +65,15 @@ http://www.ruanyifeng.com/blog/2016/01/babel.html //babelµÄ¹ÙÍø
 </script>
 
 
-°Ù¶ÈÒıÇæ¹ØÁª´Ê https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=you
+ç™¾åº¦å¼•æ“å…³è”è¯ https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=you
 https://www.baidu.com/su?&wd=${kw}
-°Ù¶ÈËÑË÷ https://www.baidu.com/s?wd=you
-hao123 ³õÊ¼»¯ËÑË÷½á¹û https://www.hao123.com/sugdata_s4.json
+ç™¾åº¦æœç´¢ https://www.baidu.com/s?wd=you
+hao123 åˆå§‹åŒ–æœç´¢ç»“æœ https://www.hao123.com/sugdata_s4.json
 
 
 
-react Â·ÓÉ£º
-ÔÚindex.jsÀï
+react è·¯ç”±ï¼š
+åœ¨index.jsé‡Œ
 import {BrowserRouter,Route} from 'react-router-dom';
 import Home from './home.js';
 import Content from './content.js';
@@ -93,14 +93,14 @@ ReactDOM.render(
     </div>
     , document.getElementById('root'));
 
-ÏìÓ¦Ê½×ÖÌå
+å“åº”å¼å­—ä½“
 html { font-size:100px; }
-@media(max-width:540px){ html { font-size:84.375px; } } /*Android³£ÓÃ¿í¶È*/
-@media(max-width:480px){ html { font-size:75px; } }		/*Android³£ÓÃ¿í¶È*/
-@media(max-width:414px){ html { font-size:64.69px; } }  /*i6Plus,i7Plus¿í¶È*/  
-@media(max-width:375px){ html { font-size:58.59px; } }	/*i6,i7¿í¶È*/
-@media(max-width:360px){ html { font-size:56.25px; } }	/*Android³£ÓÃ¿í¶È*/
-@media(max-width:320px){ html { font-size:50px; } }		/*i5¿í¶È*/
+@media(max-width:540px){ html { font-size:84.375px; } } /*Androidå¸¸ç”¨å®½åº¦*/
+@media(max-width:480px){ html { font-size:75px; } }		/*Androidå¸¸ç”¨å®½åº¦*/
+@media(max-width:414px){ html { font-size:64.69px; } }  /*i6Plus,i7Pluså®½åº¦*/  
+@media(max-width:375px){ html { font-size:58.59px; } }	/*i6,i7å®½åº¦*/
+@media(max-width:360px){ html { font-size:56.25px; } }	/*Androidå¸¸ç”¨å®½åº¦*/
+@media(max-width:320px){ html { font-size:50px; } }		/*i5å®½åº¦*/
 
 https://intra.cn.alphanetworks.com/
 
@@ -121,3 +121,6 @@ $(document).click(function(e){
 	}
 
 })
+http://music.163.com/api/search/get/web?csrf_token=hlpretag=&hlposttag=&s=%E5%BC%A0%E5%AD%A6%E5%8F%8B&type=1&offset=0&total=true&limit=100
+http://music.163.com/api/song/lyric?os=pc&id=191232&lv=-1&kv=-1&tv=-1
+http://music.163.com/api/song/detail/?id=191232&ids=%5B191232%5D
