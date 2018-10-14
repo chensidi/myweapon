@@ -124,3 +124,15 @@ $(document).click(function(e){
 http://music.163.com/api/search/get/web?csrf_token=hlpretag=&hlposttag=&s=%E5%BC%A0%E5%AD%A6%E5%8F%8B&type=1&offset=0&total=true&limit=100
 http://music.163.com/api/song/lyric?os=pc&id=191232&lv=-1&kv=-1&tv=-1
 http://music.163.com/api/song/detail/?id=191232&ids=%5B191232%5D
+
+for(var i = mui.hooks.inits.length-1,item;i >= 0;i --){//解决mui上拉加载后scroll失效
+				item = mui.hooks.inits[i];
+				if(item.name=="pullrefresh"){
+				    item.repeat=true;
+				}
+			}
+//解决mui的a跳转失效
+mui('body').off('tap','a');
+mui('body').on('tap','a',function(){
+	window.top.location.href = this.href;
+});
