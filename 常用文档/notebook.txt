@@ -136,3 +136,18 @@ mui('body').off('tap','a');
 mui('body').on('tap','a',function(){
 	window.top.location.href = this.href;
 });
+
+<!--下拉刷新容器-->
+<div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+  <div class="mui-scroll">
+    <!--数据列表-->
+    <ul class="mui-table-view mui-table-view-chevron">
+      
+    </ul>
+  </div>
+</div>
+mui('#refreshContainer').pullRefresh().pulldownLoading();//手动触发下拉
+mui('#pullrefresh').pullRefresh().pullupLoading();//手动触发上拉
+mui('#refreshContainer').pullRefresh().endPulldownToRefresh();//结束下拉
+mui('#refreshContainer').pullRefresh().endPullupToRefresh()；//结束上拉
+mui('#refreshContainer').pullRefresh().scrollTo(0,0,100);//滚动到特定位置
