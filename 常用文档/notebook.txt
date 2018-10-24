@@ -151,3 +151,41 @@ mui('#pullrefresh').pullRefresh().pullupLoading();//手动触发上拉
 mui('#refreshContainer').pullRefresh().endPulldownToRefresh();//结束下拉
 mui('#refreshContainer').pullRefresh().endPullupToRefresh()；//结束上拉
 mui('#refreshContainer').pullRefresh().scrollTo(0,0,100);//滚动到特定位置
+
+img to base64
+function getBase64Image(img) {
+        var canvas = document.createElement("canvas");
+        canvas.width = img.width;
+        canvas.height = img.height;
+        var ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, img.width, img.height);
+        var dataURL = canvas.toDataURL("image/png");
+        return dataURL
+        // return dataURL.replace("data:image/png;base64,", "");
+    }
+
+
+    function main() {
+        var img = document.createElement('img');
+        img.src = '下载.jpg';  //此处自己替换本地图片的地址
+        img.setAttribute("crossOrigin",'Anonymous');
+        img.onload = function() {
+            var data = getBase64Image(img);
+            var img1 = document.createElement('img');
+            img1.src = data;
+            document.body.appendChild(img1);
+            // console.log(data);
+        }
+    }
+    main()
+    var canvas = document.getElementById("canvas"),//获取canvas
+        ctx = canvas.getContext("2d"), //对应的CanvasRenderingContext2D对象(画笔)
+        img = new Image(),//创建新的图片对象
+        base64 = '' ;//base64 
+      	img.src = '下载.jpg';
+      	img.setAttribute("crossOrigin",'Anonymous');
+        img.onload = function(){//图片加载完，再draw 和 toDataURL
+           ctx.drawImage(img,0,0,50,50);    
+           base64 = canvas.toDataURL("image/png");
+           console.log(base64.length) 
+    };
