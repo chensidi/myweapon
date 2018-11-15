@@ -11,3 +11,5 @@
 淘宝镜像：npm install -g cnpm –registry=https://registry.npm.taobao.org
 
 资源1：http://www.pornhub.me.uk/
+资源2：https://www.alotporn.com/
+资源3：http://www.baidu.com
