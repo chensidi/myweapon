@@ -1,0 +1,43 @@
+intra.cn.alphanetworks.com/
+1.datatype:
+	'integer'
+	'uinteger'
+	'float'
+	'ufloat'
+	'ipaddr'
+	'ip4addr'
+	'ip6addr'
+	'netmask4'
+	'netmask6'
+	'cidr4'
+	'cidr6'
+	'ipmask4'
+	'ipmask6'
+	'port'
+	'portrange'
+	'macaddr'
+	'host'
+	'hostname'
+	'network'
+	'wpakey'
+	'uciname'
+	'range'
+	'min'
+	'max'
+	'and'
+	'or'
+	‘device’
+
+2.id（sid）//获取目标id值
+
+3.ucipath（sid）//返回config，section，option
+
+4.ucivalue（sid）//返回etc/config/option 对应值
+
+5.formvalue（sid）// 返回当前input的值
+
+6.validate（sid）//验证格式，返回布尔值
+
+7.depends（option,val） // 根据目标值显示，隐藏
+
+8.

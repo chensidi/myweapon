@@ -1,0 +1,109 @@
+excute:function(){
+	var m = L.cbi.Map('sys'{ //对应/etc/config/的sys文件
+		caption: '',
+		descriptionL '',
+		readonly: false		
+	})
+	var s = m.section(L.cbi.TypedSection,'sysname',{//看/etc/config/对应的文件内有无 sysname选项，若没有则内容为空
+		caption: '',
+		readonly: false,
+		...
+		addremove:   true,//出现添加和删除按钮
+		tabbed:      true, //使用选项卡类型
+		sortable:    true //排序按钮
+		anonymous：  true //匿名
+		collabsible:  true //可折叠
+	})
+	var s_s = m.subsection
+
+	//L.cbi.DummyValue 
+	//L.cbi.InputValue  (datatype:1.range(1,100),2.ip4addr,3.ip6addr,4.port)
+	//L.cbi.CheckboxValue
+	//L.cbi.DynamicList
+	//L.cbi.ListValue
+	//L.cbi.PasswordValue
+	//L.cbi.DeviceList
+	//L.cbi.ComboBox
+	//L.cbi.MultiValue
+	//L.cbi.HiddenValue
+	//L.cbi.ButtonValue
+	//L.cbi.NetworkList
+	//L.cbi.WlanFreqValue 工作频率
+
+	//L.cbi.NamedSection
+	//L.cbi.TypedSection
+	//L.cbi.TableSection
+	//L.cbi.GridSection
+	//L.cbi.SingleSection
+	s.tab({
+		id:'tab1',
+		caption: 'tab1'
+	})
+	s.taboption('tab1',L.cbi.InputValue,'ll',{
+		caption: 'title1',
+		description: 'desc',
+		uci_option: 'testopt' //save函数里面调用 exp this.ownerMap.set('my',sid,'testopt','100');
+		anonymous: true //匿名
+		initial:'123' //默认值
+		optional: true //不验证
+		datatype: 'ip4addr,ip4addr,netmask4,range,uinteger,host,port,or(uinteger,ip4addr),hostname,macaddr，maxlength(34)'
+		...
+	})
+}
+L.ui.grid
+
+
+config defaults
+        option syn_flood '1'
+        option input 'ACCEPT'
+        option output 'ACCEPT'
+        option forward 'REJECT'
+        option disabled '0'
+
+config zone
+        option name 'lan'
+        list network 'lan'
+        option input 'ACCEPT'
+        option output 'ACCEPT'
+        option forward 'ACCEPT'
+
+config zone
+        option name 'wan'
+        list network 'wan'
+        list network 'wan6'
+        option input 'REJECT'
+        option output 'ACCEPT'
+        option forward 'REJECT'
+        option masq '1'
+        option mtu_fix '1'
+
+config forwarding
+        option src 'lan'
+        option dest 'wan'
+
+config rule
+        option name 'Allow-DHCP-Renew'
+        option src 'wan'
+        option proto 'udp'
+        option dest_port '68'
+        option target 'ACCEPT'
+        option family 'ipv4'
+
+config rule
+        option name 'Allow-Ping'
+        option src 'wan'
+        option proto 'icmp'
+        option icmp_type 'echo-request'
+        option family 'ipv4'
+        option target 'ACCEPT'
+
+config rule
+        option name 'Allow-IGMP'
+        option src 'wan'
+        option proto 'igmp'
+        option family 'ipv4'
+        option target 'ACCEPT'
+
+config rule
+        option name 'Allow-DHCPv6'
+        option src 'wan'

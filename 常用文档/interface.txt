@@ -1,0 +1,115 @@
+1.getARPTable: L.rpc.declare({ //获取ARP中device，ip，mac
+        object: 'luci2.network',
+        method: 'arp_table',
+        expect: { entries: [ ] },
+        filter: function(data, params) {
+            var tmp = [ ];
+            for (var i = 0; i < data.length; i++)
+                if (data[i].macaddr != '00:00:00:00:00:00')
+                    tmp.push(data[i]);
+            return tmp;
+        }
+    })
+
+2.getConntrackCount: L.rpc.declare({ //获取连接跟踪数据
+		object: 'luci2.network',
+		method: 'conntrack_count',
+		expect: { '': { count: 0, limit: 0 } }
+	})
+3.getDHCPLeases: L.rpc.declare({ //获取DHCP分配
+		object: 'luci2.network',
+		method: 'dhcp_leases',
+		expect: { leases: [ ] }
+	}),
+4.getDHCPv6Leases: L.rpc.declare({ //获取DHCP6分配
+		object: 'luci2.network',
+		method: 'dhcp6_leases',
+		expect: { leases: [ ] }
+	}),
+5.L.network.refreshStatus()，//刷新网络
+  L.network.findWAN(); 	//
+  L.network.findWAN6();//wan和wan6的数据
+  L.system.getInfo() //系统信息
+  L.wireless.getAssocLists() //已连接站点数据
+
+路由表
+1.活动的IPv4链路
+    getRoutes: L.rpc.declare({
+        object: 'luci2.network',
+        method: 'routes',
+        expect: { routes: [ ] }
+    })
+2.活动的IPv6链路
+	getIPv6Routes: L.rpc.declare({
+		object: 'luci2.network',
+		method: 'routes',
+		expect: { routes: [ ] }
+	}),
+3.系统日志
+    getSystemLog: L.rpc.declare({
+        object: 'luci2.system',
+        method: 'syslog',
+        expect: { log: '' }
+    })
+4.内核日志
+    getKernelLog: L.rpc.declare({
+        object: 'luci2.system',
+        method: 'dmesg',
+        expect: { log: '' }
+    }),
+
+
+系统
+
+1.L.system.getLocaltime() //获取系统时间
+2.luci2/zoneinfo.json //时区数据
+3.m.get(configfile,config) //获取/etc/config下的文件内容
+4.L.ui.getAvailableACLs() //获取所有acl规则
+
+
+网络
+1.L.network.getInterfaces() 
+	获取的值可使用以下方法
+	getUptime()
+	getIPv4Addrs()
+	getIPv6Addrs()
+	name()
+2.L.wireless.load()无线数据加载
+	获取之后可使用
+	txpwrlist（无线电功率），countrylist（国家代码）
+
+3.testUpgrade: L.rpc.declare({//刷写测试
+		object: 'luci2.system',
+		method: 'upgrade_test',
+		expect: { '': { } }
+	}),
+
+4.startUpgrade: L.rpc.declare({
+		object: 'luci2.system',
+		method: 'upgrade_start',
+		params: [ 'keep' ]
+	}),
+5.listSwitchNames: L.rpc.declare({ //获取交换机列表
+		object: 'luci2.network',
+		method: 'switch_list',
+		expect: { switches: [ ] }
+	}),
+6.getSwitchInfo: L.rpc.declare({ //获取交换机信息
+		object: 'luci2.network',
+		method: 'switch_info',
+		params: [ 'switch' ],
+		expect: { info: { } },
+		filter: function(data, params) {
+			data['attrs']      = data['switch'];
+			data['vlan_attrs'] = data['vlan'];
+			data['port_attrs'] = data['port'];
+			data['switch']     = params['switch'];
+
+			delete data.vlan;
+			delete data.port;
+
+			return data;
+		}
+	}),
+getUCISections //在调用section后，使用该方法，会得到对应config的所有内容
+this.ownerMap.get(uci.config, uci.section, uci.option)
