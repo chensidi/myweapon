@@ -113,3 +113,22 @@
 	}),
 getUCISections //在调用section后，使用该方法，会得到对应config的所有内容
 this.ownerMap.get(uci.config, uci.section, uci.option)
+
+ubus命令行工具
+1.ubus list 缺省列出所有通过RPC服务器注册的命名空间
+2.ubus -v list network 显示指定命名空间network内部方法参数等信息
+3.ubus call network.interface.wan status 调用指定命名空间中指定的方法，并且通过消息传递给它
+4.ubus call network.device status '{ "name": "eth0" }' 消息参数必须是有效的JSON字符串，并且携带函数所要求的键及值
+
+
+L.rpc.declare原理
+example:
+getSwitchStatus: L.rpc.declare({
+        object: 'luci2.network',//在console里敲入ubus list，会出现许多RPC服务器注册的命名空间，object选取其中已定义的一个。
+        method: 'switch_status',//在console里敲入ubus -v list network，会出现大量指定命名空间更多方法参数等信息，method选取其中已定义的
+        params: [ 'switch' ],// 对应详细信息里的属性名
+        expect: { ports: [ ] } //期望值，若返回对象存在，则正常返回期望值，否则返回传入的原值。
+	filter: function(data, params) {
+            ... //data为返回结果，params为获取的结果如：{switch:'switch0'}
+        }
+    })
