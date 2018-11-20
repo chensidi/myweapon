@@ -6,7 +6,7 @@ excute:function(){
 	})
 	var s = m.section(L.cbi.TypedSection,'sysname',{//看/etc/config/对应的文件内有无 sysname选项，若没有则内容为空
 		caption: '',
-		readonly: false,
+		readonly:  !self.options.acls.my,
 		...
 		addremove:   true,//出现添加和删除按钮
 		tabbed:      true, //使用选项卡类型

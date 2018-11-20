@@ -1,4 +1,4 @@
-DOM：
+﻿DOM：
 1.w3c标准
 2.定义访问HTML和xml文档标准
 3.文档对象模型是，中立于平台和语言的接口，它允许程序和脚本动态访问和更新文档的内容，结构和样式。
@@ -189,3 +189,7 @@ function getBase64Image(img) {
            base64 = canvas.toDataURL("image/png");
            console.log(base64.length) 
     };
+
+npm err! a complete log of this run can be found in //npm 报错
+npm install npm -g 
+cnpm install npm -g 
