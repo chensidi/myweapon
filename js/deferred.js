@@ -23,7 +23,7 @@ function changestatus1(def){
 function changestatus2(){ //内部产生延迟对象
 	var def = $.Deferred();
 	var change = function(){
-		def.resolve();
+		def.resolve(1,2,3);
 	}
 	setTimeout(()=>{
 		change();
@@ -52,8 +52,8 @@ $.when(changestatus1(def)).done(()=>{ //延迟执行。观察def的promise状态
 	console.log('fail');
 })
 
-$.when(changestatus2()).done(()=>{ //延迟执行。将def变为内部变量，外部无法修改
-	console.log('done');
+$.when(changestatus2()).done((...arg)=>{ //延迟执行。将def变为内部变量，外部无法修改
+	console.log(arg);
 }).fail(()=>{
 	console.log('fail');
 })
