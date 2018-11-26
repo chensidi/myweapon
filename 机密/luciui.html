@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="layui/css/layui.css"  media="all">
+</head>
+<body>
+	<table class="layui-table" width="600">
+	  <colgroup>
+	    <col width="150">
+	    <col width="200">
+	    <col width="200">
+	  </colgroup>
+	  <thead>
+	    <tr>
+	      <th width="150">API</th>
+	      <th width="150">用法</th>
+	      <th width="150">参数</th>
+	    </tr> 
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>loading</td>
+	      <td>界面加载</td>
+	      <td>(boolean,msg)</td>
+	    </tr>
+		<tr>
+	      <td>dialog</td>
+	      <td>对话框，弹出层</td>
+	      <td>(title, content, options)</td>
+	    </tr>
+	    <tr>
+	      <td>dialog</td>
+	      <td>对话框，弹出层</td>
+	      <td>(title, content, options)</td>
+	    </tr>
+	    <tr>
+	      <td>upload</td>
+	      <td>文件上传，弹出层</td>
+	      <td>(title, content, options)</td>
+	    </tr>
+	    <tr>
+	      <td>reconnect</td>
+	      <td>重新连接，弹出层</td>
+	      <td>(info)</td>
+	    </tr>
+	    <tr>
+	      <td>CaptchaCallback</td>
+	      <td>返回图片路径</td>
+	      <td>none</td>
+	    </tr>
+	    <tr>
+	      <td>Captcha</td>
+	      <td>手动定义，返回随机图片对象，包含status,captcha,path参数</td>
+	      <td>none</td>
+	    </tr>
+	    <tr>
+	      <td>Captcha</td>
+	      <td>手动定义，返回随机图片对象，包含status,captcha,path参数</td>
+	      <td>none</td>
+	    </tr>
+	    <tr>
+	      <td>login</td>
+	      <td>登录</td>
+	      <td>(invalid) 布尔值</td>
+	    </tr>
+	    <tr>
+	      <td>callACLs</td>
+	      <td>返回所有acl规则</td>
+	      <td>none</td>
+	    </tr>
+	    <tr>
+	      <td>getAvailableACLs</td>
+	      <td>返回所有acl规则对象</td>
+	      <td>none</td>
+	    </tr>
+		<tr>
+	      <td>updateHostname</td>
+	      <td>更新主机名</td>
+	      <td>none</td>
+	    </tr>
+		<tr>
+	      <td>loadTheme</td>
+	      <td>加载主题文件</td>
+	      <td>none</td>
+	    </tr>
+	    <tr>
+	      <td>button</td>
+	      <td>生成按钮</td>
+	      <td>(label, style, title)</td>
+	    </tr>
+	    <tr>
+	      <td>icon</td>
+	      <td>生成按钮</td>
+	      <td>(label, style, title)</td>
+	    </tr>
+	    <tr>
+	      <td>insertInto</td>
+	      <td>插入，id目标元素清空，然后插入该元素</td>
+	      <td>(id)</td>
+	    </tr>
+	    <tr>
+	      <td>appendTo</td>
+	      <td>插入，id目标内追加元素</td>
+	      <td>(id)</td>
+	    </tr>
+	    <tr>
+	      <td>on</td>
+	      <td>在组件上注册事件</td>
+	      <td>(evname,evfunc)</td>
+	    </tr>
+	    <tr>
+	      <td>trigger</td>
+	      <td>传入参数，调用组件上注册事件</td>
+	      <td>(evname,evdata)</td>
+	    </tr>
+	    <tr>
+	      <td>repeat</td>
+	      <td>定时器</td>
+	      <td>(func, interval)</td>
+	    </tr>
+	    <tr>
+	      <td>finish</td>
+	      <td>清除定时器</td>
+	      <td>none</td>
+	    </tr>
+	    <tr>
+	      <td>L.ui.table</td>
+	      <td>生成表格</td>
+	      <td>options</td>
+	    </tr>
+	    <tr>
+	      <td>L.ui.grid</td>
+	      <td>生成栅格</td>
+	      <td>options</td>
+	    </tr>
+	    <tr>
+	      <td>table.row</td>
+	      <td>生成表格或栅格一行</td>
+	      <td>(arr或者obj),如果为arr，会依次遍历所有值，如果为obj，会遍历与key对应的属性值</td>
+	    </tr>
+	    <tr>
+	      <td>table.rows</td>
+	      <td>生成多行</td>
+	      <td>[[],[]]，或者[{},{}]</td>
+	    </tr>
+	    <tr>
+	      <td>table.rows</td>
+	      <td>生成多行</td>
+	      <td>[[],[]]，或者[{},{}]</td>
+	    </tr>
+	    <tr>
+	      <td>hlist</td>
+	      <td>生成文字列表</td>
+	      <td>options的items必须是数组</td>
+	    </tr>
+	    <tr>
+	      <td>progress</td>
+	      <td>进度条</td>
+	      <td>options包含，value，max</td>
+	    </tr>
+	    <tr>
+	      <td>devicebadge</td>
+	      <td>设备徽章</td>
+	      <td>options</td>
+	    </tr>
+	   </tbody>
+	</table>
+</body>
+</html>
