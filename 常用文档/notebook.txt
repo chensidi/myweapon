@@ -40,6 +40,7 @@ str = str.replace(re,function($0,$1,$2){
 nodejs的cheerio解决乱码
 var $ = cheerio.load(html,{decodeEntities: false});
 mysql的id指定自增位置：alter table xiaoshuo AUTO_INCREMENT=49;//从49位开始增长
+select hotid,count(*) as count from hotlistinfo group by hotid having count>1; //查看重复字段
 
 es6数组fill方法，接收三个参数arr.fill(tag,start,end);//不包括end
 keys(),values(),entries(),for...of,map,includes(),find((val,index,arr)=>{}),findIndex(),Array.from([],f()),Array.of(），every((item,index,arr)=>{}),some((item,index,arr)=>{}),filter((x)=>{...})
