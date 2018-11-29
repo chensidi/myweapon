@@ -199,9 +199,14 @@
 	      <td>(sid)</td>
 	    </tr>
 	    <tr>
-	      <td>id</td>
-	      <td>获取目标id</td>
-	      <td>(sid)</td>
+	      <td>s.id</td>
+	      <td>获取section区域id后半部分，如('section_my_wire')中的'_my_wire'</td>
+	      <td>$(elem)</td>
+	    </tr>
+	    <tr>
+	      <td>sub.findParentSectionIDs</td>
+	      <td>获取父级section的所有id</td>
+	      <td>none</td>
 	    </tr>
 	    <tr>
 	      <td>ucipath</td>
@@ -354,8 +359,8 @@
 	      <td></td>
 	    </tr>
 	    <tr>
-	      <td>cbi构建区域FirewallZoneList</td>
-	      <td>防火墙专属</td>
+	      <td>cbi构建区域DatetimeValue</td>
+	      <td>时间选择器</td>
 	      <td></td>
 	    </tr>
 	    <tr>
@@ -365,8 +370,28 @@
 	    </tr>
 	    <tr>
 	      <td>cbi构建区域WlanFreqValue</td>
+	      <td>包含模式，信道，带宽选择器</td>
 	      <td></td>
-	      <td></td>
+	    </tr>
+	    <tr>
+	      <td>m.add()</td>
+	      <td>向etc/config 里添加配置</td>
+	      <td>(configname,type,sid) 比如m.add('my','wifi0','dt')</td>
+	    </tr>
+	    <tr>
+	      <td>m.remove()</td>
+	      <td>向etc/config 里删除配置</td>
+	      <td>(configname,sid) 比如m.remove('my','dt')</td>
+	    </tr>
+	    <tr>
+	      <td>m.set()</td>
+	      <td>向etc/config 里修改配置</td>
+	      <td>(configname,sid,option,val) 比如m.set('my','dt','name','jacky')</td>
+	    </tr>
+	    <tr>
+	      <td>m.get()</td>
+	      <td>向etc/config 里添加配置</td>
+	      <td>(configname,sid,option) 比如m.set('my','dt','testopt')</td>
 	    </tr>
 	   </tbody>
 	</table>
