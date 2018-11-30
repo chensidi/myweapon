@@ -109,3 +109,15 @@ this is not effect
 #6. os.rename(curfilename,tagfilename)
 #7. os.getcwd()
 #8. txt.tell()
+
+#搭建服务器
+#1. python -m SimpleHTTPServer 80
+#2. python -m http.server 80
+
+#爬虫v1.0
+# import urllib2
+# ur1='http://www.taobao.com'
+# reponse=urllib2.urlopen(ur1)
+# r=reponse.read()
+# r=r.decode('utf8')
+# print(r)
