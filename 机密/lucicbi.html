@@ -393,6 +393,16 @@
 	      <td>向etc/config 里添加配置</td>
 	      <td>(configname,sid,option) 比如m.set('my','dt','testopt')</td>
 	    </tr>
+			<tr>
+				<td>createForm()</td>
+				<td>L.network.getInterfaces的结果成员，执行.弹出层区域配置，如lan，tr069lan配置</td>
+				<td>.(L.cbi.Modal).show()</td>
+			</tr>
+			<tr>
+				<td>createForm()</td>
+				<td>L.firewall.findZoneBySid(sid)的结果调用,sid为s.getUCISections()的结果取.name属性</td>
+				<td></td>
+			</tr>
 	   </tbody>
 	</table>
 </body>
