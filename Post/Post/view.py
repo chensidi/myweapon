@@ -35,9 +35,10 @@ def gets(request):
         res = ''
         resalt = ''
         data = {}
-        resall = Test2.objects.order_by('id')[2:5]
-        # for obj in resall:
-        #     resalt += obj.alt
-        # res = resalt
-        # return HttpResponse(json.dumps(list(resall)))
+        resall = Test2.objects.only('alt').order_by('id')[2:5] #查询 order by id asc limit 2, 5-2
+        #Test.objects.all() === select * from test
+        #Test.objects.filter(id=1) === select * from test where id=1
+        #Test.objects.get(id=1) 同上,单个对象
+        #Test2.objects.only('alt') 查询指定字段
+
         return HttpResponse(json.dumps(list(resall), default=lambda obj: obj.__dict__), content_type='application/json') #返回json数据
