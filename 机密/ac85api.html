@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="layui/css/layui.css"  media="all">
+</head>
+<body>
+	<table class="layui-table" width="600">
+		  <thead>
+		    <tr>
+		      <th width="150">API</th>
+		      <th width="150">用法</th>
+		      <th width="150">备注</th>
+		    </tr> 
+		  </thead>
+		  <tbody>
+				<tr>
+					<td>L.ui.alpha_view.extend({})</td>
+					<td>ac85的view总入口</td>
+					<td>整个界面是一个L.ui.alpha_view的顶层对象，每一个子页面是这个顶层对象下面拓展出来的</td>
+				</tr>
+		    <tr>
+		      <td>save</td>
+		      <td>保存设置</td>
+		      <td>手动定义的方法，self调用</td>
+		    </tr>
+		    <tr>
+			    <td>L.cbi.validation.message</td>
+			    <td>验证信息</td>
+			    <td>一般在验证之前将其delete</td>
+		    </tr>
+		    <tr>
+		    	<td>$.observable(self._data).setProperty()</td>
+		    	<td>'data.domainError', L.cbi.validation.message</td>
+		    	<td>设置界面的错误信息</td>
+		    </tr>
+		    <tr>
+		    	<td>L.uci.alpha_set</td>
+		    	<td>(config,sid,option,val)</td>
+		    	<td>类似于m.set,设置etc/config的值</td>
+		    </tr>
+				<tr>
+					<td>L.uci.remove</td>
+					<td>(config,sid)</td>
+					<td>类型于m.remove,删除config某个区域</td>
+				</tr>
+				<tr>
+					<td>L.uci.add</td>
+					<td>(config,name)</td>
+					<td>类型于m.add,返回值就是新增后得到的sid</td>
+				</tr>
+				<tr>
+					<td>$.templates("#temp")</td>
+					<td>与对应的模板发生关联</td>
+					<td>本系统采用的是jsrender模板渲染</td>
+				</tr>
+				<tr>
+					<td>template.link("#map", self._data, eventBindings);</td>
+					<td>将模板渲染到map里，并且绑定值与方法</td>
+					<td>本系统采用的数据类似vue，双向绑定mvvm</td>
+				</tr>
+				<tr>
+					<td>self._data</td>
+					<td>页面全局顶级数据对象</td>
+					<td>界面上绑定的数据从该顶级对象的属性上取值</td>
+				</tr>
+				<tr>
+					<td>eventBindings</td>
+					<td>页面全局顶级事件对象</td>
+					<td>界面的注册的事件从该对象上取值</td>
+				</tr>
+				<tr>
+					<td>L.uci.sections()</td>
+					<td>config,sid</td>
+					<td>与ac65内的用法一样</td>
+				</tr>
+				<tr>
+					<td>packages</td>
+					<td>表示该页面的数据来源</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>$.observable(obj).setProperty(key,val)</td>
+					<td>obj代表需要修改的对象，key表示修改的属性，val表示值</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>$.observable(obj).insert(subobj)</td>
+					<td>obj表示需要插入的目标对象，subobj表示插入的内容对象</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>$.observable(obj).remove(pos)</td>
+					<td>obj表示删除的目标对象，pos表示删除的位置</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>self.render()</td>
+					<td>重新加载数据</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>$.views.converters()</td>
+					<td>传入的是对象，对象的属性为函数，如toBool:function(){...}</td>
+					<td>转换界面上的值得类型</td>
+				</tr>
+				<tr>
+					<td>L.uci.commit</td>
+					<td>参数为L.uci.changes()后得到的数据对象的属性值集合，大部分不包括tr069</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><%:IP Address%></td>
+					<td>jsrender模板中的字符串常量</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>data-link='data.ip'</td>
+					<td>jsrender模板中绑定的数据</td>
+					<td>是在self_data中的属性值</td>
+				</tr>
+				<tr>
+					<td>{^{radiogroup network.dns_relay}}{{/radiogroup}}</td>
+					<td>单选区域</td>
+					<td>该区域绑定的值为self_data中的network.dns_relay属性</td>
+				</tr>
+				<tr>
+					<td>data-link='{:network.primary:} disabled{:network.dns_relay=='1'}'</td>
+					<td>绑定值和动态属性</td>
+					<td>第一个花括号表示绑定的值self_data的network.primary属性值，后面跟着动态属性disabled,其值取决于后面花括号的结果</td>
+				</tr>
+				<tr>
+					<td>{^{for ~root.dhcp.dns_server}}{{/for}}</td>
+					<td>循环生成dom，循环的对象~root就代表self_data</td>
+					<td>在循环结构里面绑定的数据，是从循环的每一位对象上取值，文本值使用{{>txt}}表示</td>
+				</tr>
+				<tr>
+					<td>data-link='{on 'change' ~changeProtocol} {:pageVal.proto:}'</td>
+					<td>注册事件用on 开头后跟事件名，~XX 表示事件处理函数</td>
+					<td>button默认为click事件，即直接使用on ~XXX</td>
+				</tr>
+				<tr>
+					<td>data-link='css-display{:()}'</td>
+					<td>动态css属性</td>
+					<td>括号内为js语法，一般为三目运算</td>
+				</tr>
+		   </tbody>
+	</table>
+</body>
+</html>
