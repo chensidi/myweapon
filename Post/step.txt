@@ -67,6 +67,7 @@
     3.python manage.py migrate   # 创建表结构
     4.python manage.py makemigrations TestModel  # 让 Django 知道我们在我们的模型有一些变更
     5.python manage.py migrate TestModel   # 创建表结构
+    6.python manage.py runserver 0.0.0.0:8000 #启动服务器
 
 7.#Test.objects.all() === select * from test
   #Test.objects.filter(id=1) === select * from test where id=1
