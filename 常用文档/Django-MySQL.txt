@@ -1,0 +1,42 @@
+Django操作MySQL
+原文链接:https://blog.csdn.net/scrat_kong/article/details/82053066
+
+1.添加已有的数据库到Django：
+	将setting.py的database的name改为目标数据库，
+	打开cmd进入项目目录，执行python manage.py inspectdb > modelname/models.py
+
+2.增加指令：
+	email = req.POST.get('email',0)
+        pwd = req.POST.get('pwd',0)
+        dic = {'email':email,'pwd':pwd}
+        User.objects.create(**dic)
+	或者User.objects.create(email=email,pwd=pwd)
+	或者User.objects(email=email,pwd=pwd)；User.save()
+
+3.删除指令：
+	User.objects.filter(id='2').delete()
+
+4.修改指令：
+	User.objects.filter(id='13').update(email='jacky@qq.com',pwd='12345')
+
+5.查询指令：
+	User.objects.all()
+	User.objects.fillter(id='1')
+	User.objects.fillter(id='1').values('pwd')
+	User.objects.all()[2:5]
+	User.objects.all().values('email','pwd')
+	User.objects.all().values_list('email','pwd')
+
+6.模糊查询：
+	User.objects.fillter(email__contains='j')
+
+7.大小比较
+	exact  相等
+	gt     大于
+	gte    大于等于
+	lt     小于
+	lte    小于等于
+
+8.取参数get/post：
+	id = req.GET.get('id',0)
+	name = req.POST.get('name',0)
