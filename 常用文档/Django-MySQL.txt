@@ -40,3 +40,6 @@ Django操作MySQL
 8.取参数get/post：
 	id = req.GET.get('id',0)
 	name = req.POST.get('name',0)
+
+9.返回json数据：
+	return HttpResponse(json.dumps(list(res), default=lambda obj: obj.__dict__), content_type='application/json')
