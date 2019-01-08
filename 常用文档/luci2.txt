@@ -53,57 +53,5 @@ excute:function(){
 L.ui.grid
 
 
-config defaults
-        option syn_flood '1'
-        option input 'ACCEPT'
-        option output 'ACCEPT'
-        option forward 'REJECT'
-        option disabled '0'
-
-config zone
-        option name 'lan'
-        list network 'lan'
-        option input 'ACCEPT'
-        option output 'ACCEPT'
-        option forward 'ACCEPT'
-
-config zone
-        option name 'wan'
-        list network 'wan'
-        list network 'wan6'
-        option input 'REJECT'
-        option output 'ACCEPT'
-        option forward 'REJECT'
-        option masq '1'
-        option mtu_fix '1'
-
-config forwarding
-        option src 'lan'
-        option dest 'wan'
-
-config rule
-        option name 'Allow-DHCP-Renew'
-        option src 'wan'
-        option proto 'udp'
-        option dest_port '68'
-        option target 'ACCEPT'
-        option family 'ipv4'
-
-config rule
-        option name 'Allow-Ping'
-        option src 'wan'
-        option proto 'icmp'
-        option icmp_type 'echo-request'
-        option family 'ipv4'
-        option target 'ACCEPT'
-
-config rule
-        option name 'Allow-IGMP'
-        option src 'wan'
-        option proto 'igmp'
-        option family 'ipv4'
-        option target 'ACCEPT'
-
-config rule
-        option name 'Allow-DHCPv6'
-        option src 'wan'
+L.uci.section()是获取设备内存值并非config值，查看设备内存值的console的指令：ubus call uci get '{"config":"dhcp", "ubus_rpc_session":"fc6c341
+db3ffd82508da985dfef897b2"}'
