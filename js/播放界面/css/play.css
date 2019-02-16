@@ -175,3 +175,212 @@
     color: #fff;
     font-style: normal;
 }
+
+
+.cmt_bg{
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    transform: scale(1.5);
+    transform-origin: center top;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    transition: opacity .3s linear;
+    background-image: url(https://p3.music.126.net/0L3U9NE5q_DmrnfQZyXdwQ==/1667959139356288.jpg);
+    opacity: 1;
+}
+.cmt_drop{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    z-index: 100;
+    display: flex;
+    background: rgba(255,255,255,1);
+}
+.loadings{
+    margin: auto;
+    font-size: 14px;
+}
+.loadings em{
+    font-style: normal;
+}
+.loadings i{
+    animation: rot 2s linear infinite;
+    -webkit-animation: rot 2s linear infinite;
+    -moz-animation: rot 2s linear infinite;
+    -ms-animation: rot 2s linear infinite;
+    -o-animation: rot 2s linear infinite;
+}
+@keyframes rot{
+    from{
+        transform: rotate(0deg);
+    }to{
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes rot{
+    from{
+        transform: rotate(0deg);
+    }to{
+        transform: rotate(360deg);
+    }
+}
+@-moz-keyframes rot{
+    from{
+        transform: rotate(0deg);
+    }to{
+        transform: rotate(360deg);
+    }
+}
+@-o-keyframes rot{
+    from{
+        transform: rotate(0deg);
+    }to{
+        transform: rotate(360deg);
+    }
+}
+.cmt_bg::after{
+    content: " ";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0,0,0,.5);
+}
+.cmt_title{
+    position: relative;
+    padding: 0 0 0 10px;
+    line-height: 25px;
+    color: #fff;
+    font-size: 16px;
+    background-color: transparent;
+    font-weight: 400;
+    background: rgba(0,0,0,.05);
+    margin: 0;
+}
+.cmt_title::after{
+    content: "";
+    display: block;
+    width: 2px;
+    height: 16px;
+    position: absolute;
+    top: 4px;
+    left: 0;
+    background: #d33a31;
+}
+.cmt_list,.cmt_list_hot{
+    background: transparent;
+}
+.cmt_list li,.cmt_list_hot li{
+    padding-top: 10px;
+    display: flex;
+}
+.cmt_head{
+    height: 35px;
+    margin: 0 10px;
+}
+.cmt_head img{
+    display: block;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+.cmt_like,.cmt_info{
+    flex: auto;
+    position: relative;
+}
+.cmt_meta{
+    width: 80%;
+}
+.cmt_info:after{
+    position: absolute;
+    z-index: 2;
+    content: "";
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    transform-origin: top left;
+    border: 0 solid rgba(255,255,255,.1);
+    border-bottom-width: 1px;
+}
+.cmt_info{
+    padding-right: 10px;
+    padding-bottom: 11px;
+}
+.cmt_user{
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+    color: hsla(0,0%,100%,.7);
+    display: inline-block;
+    max-width: 180px;
+}
+.cmt_time{
+    color: hsla(0,0%,100%,.3);
+    font-size: 9px;
+}
+.cmt_like{
+    width: 70px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 11px;
+    color: #999;
+    -ms-flex: none;
+    flex: none;
+    text-align: right;
+}
+.cmt_header{
+    display: flex;
+    justify-content: space-between;
+}
+.cmt_likearea{
+    display: inline-block;
+    min-width: 30px;
+    padding-left: 5px;
+}
+.cmt_count{
+
+}
+.cmt_content{
+    font-size: 15px;
+    line-height: 22px;
+    margin-top: 5px;
+    color: #fff;
+    position: relative;
+    
+}
+.zan{
+    font-size: 18px;
+}
+.touser{
+    color: #507daf;
+}
+.recmt{
+    color: hsla(0,0%,100%,.6);
+    background-color: hsla(0,0%,100%,.05);
+    margin: 5px 0;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+#cmt{
+    background: transparent;
+    top: 44px;
+}
+.tt{
+    color: #333;
+}
