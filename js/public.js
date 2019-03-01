@@ -182,7 +182,7 @@ const ck = {
 //4.null == uundefined;
 //5.六种布尔值为假的情况 '',0,false,null,undefined,NAnalyserNode
 //6.数组方法不改变原数组 join，concat，slice，toString，改变 splice,pop,shift,unshift,push,sort,reverse
-//7.string 的 substr(i,j) 闭合区间 substring(i,j) 左闭右开
+
 
 
 //15.随机四位验证码
@@ -356,3 +356,15 @@ function testBrowser(){
 //Set Map 数据结构
 //Set: add,delete,has,clear,size
 //Map: set,delete,has,get,clear,size
+
+//PC移动端判断
+function IsPC(){  
+    var userAgentInfo = navigator.userAgent;
+    var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");  
+    var flag = true;  
+        for (var v = 0; v < Agents.length; v++) {  
+            if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }  
+        }  
+    return flag;  
+ }
+
