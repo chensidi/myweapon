@@ -1,4 +1,4 @@
-//1.获取url参数，返回一个json对象
+﻿//1.获取url参数，返回一个json对象
 function getUrlComponents(url){
 	var obj = {};
 	url = decodeURIComponent(url);
@@ -367,4 +367,20 @@ function IsPC(){
         }  
     return flag;  
  }
+
+function isIPv6(str) {  
+        return str.match(/:/g)&&str.match(/:/g).length<=7&&/::/.test(str)?/^([\da-f]{1,4}(:|::)){1,6}[\da-f]{1,4}$/i.test(str):/^([\da-f]{1,4}:){7}[\da-f]{1,4}$/i.test(str);  
+}
+
+function isDottedIPv4(s){
+        var match = s.match(/^(\d+)\.(\d+)\.(\d+)\.(\d+)$/);
+        return match != null &&
+                match[1] <= 255 && match[2] <= 255 &&
+                match[3] <= 255 && match[4] <= 255;
+}
+
+function isDottedHostname(host){
+	var reg = /((https|http|ftp|rtsp|mms):\/\/)?(([0-9a-z_!~*'().&=+$%-]+:)?[0-9a-z_!~*'().&=+$%-]+@)?(([0-9]{1,3}\.){3}[0-9]{1,3}|([0-9a-z_!~*'()-]+\.)*([0-9a-z][0-9a-z-]{0,61})?[0-9a-z]\.[a-z]{2,6})(:[0-9]{1,4})?((\/?)|(\/[0-9a-z_!~*'().;?:@&=+$,%#-]+)+\/?)/g;
+	return reg.test(host);
+}
 
