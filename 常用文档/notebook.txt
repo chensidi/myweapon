@@ -194,3 +194,16 @@ function getBase64Image(img) {
 npm err! a complete log of this run can be found in //npm 报错
 npm install npm -g 
 cnpm install npm -g 
+
+
+node.js作为中间件解决访问第三方api跨域问题
+request('https://news-at.zhihu.com/api/4/news/9708608',function(error,response,body){
+        /*判断请求是否成功*/
+        if (!error && response.statusCode == 200) {
+            /*把字符串转换为json*/
+            var data=JSON.parse(body);
+            /*渲染模板*/
+            // res.render('index', data);
+			console.log(data);
+			res.json(data);
+        }
