@@ -1,0 +1,116 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*栅格系统*/
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+a,i,span,em,img,input,textarea,select{
+	display: inline-block;
+}
+img{
+	border: none;
+}
+input,textarea{
+	outline: none;
+}
+textarea{
+	resize: none;
+}
+
+h1,h2,h3,h4,h5,p{
+    margin: 0 !important;
+}
+
+
+/*弹性盒子*/
+.flex{
+	display: flex;
+}
+.flex-s{
+	display: flex;
+	align-items: flex-start;
+}
+.flex-c{
+	display: flex;
+	align-items: center;
+}
+.flex-e{
+	display: flex;
+	align-items: flex-end;
+}
+.s-between{
+	display: flex;
+	justify-content: space-between;
+}
+.s-round{
+	display: flex;
+	justify-content: space-around;
+}
+.f-wrap{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+/*浮动*/
+.f-left{
+	float: left;
+}
+.f-right{
+	float: right;
+}
+.clearfix::after{
+	display: block;
+	content: "";
+	clear: both;
+}
+.clear{
+	display: block;
+	clear: both;
+}
+/*单行溢出隐藏*/
+.elp{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+/*多行溢出隐藏*/
+.elps{
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+html,body{
+	font-size: 100px;
+}
+
+/* size/w = 100/375 */
+@media screen and (min-width: 375px){
+	html,body{
+		font-size: 26.6vw;
+	}
+}
+
+
+
