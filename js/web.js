@@ -1,4 +1,46 @@
 (function(){
+
+    $.extend(String.prototype,{
+        title: function(){
+            return this.replace(/\b(\w)/ig,function($,$1){
+                $1 = $1.toUpperCase();
+                return $1;
+            })
+        },
+
+        capitalize: function(){
+            return this.replace(/\b(\w)/,function($,$1){
+                $1 = $1.toUpperCase();
+                return $1;
+            })
+        },
+
+        format: function(...rest){
+            let x = [...rest];
+            return this.replace(/(\{(\d+)\})/ig,function($,$1,$2){
+                $1 = x[$2];
+                return $1;
+            })
+        },
+
+        join: function(flag){
+            return this.split('').join(flag);
+        },
+
+        max: function(start=0,end=this.lenght){
+            let temp = this.slice(start,end).split(''),
+                max = temp[0];
+            for(let item of temp){
+                if(max < item){
+                    max = item;
+                }
+            }
+            return max;
+        }
+    })
+
+   
+
     function Web(){
         this.getUrlComponents = function(url){
             var obj = {};
@@ -306,7 +348,7 @@
         this.search = function(){
             return location.search;
         }
-    }
 
+    }
     return new Web();
 })()
