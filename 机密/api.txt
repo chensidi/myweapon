@@ -1,0 +1,55 @@
+﻿1.清除所有验证信息   delete L.cbi.validation.message
+
+2.编译验证类型       var vstack = L.cbi.validation.compile('hostname');
+                    var v = vstack[0].apply(self._data['data']['domain']);
+                    if(!v) return;
+
+3.设置页面的绑定值   $.observable(self._data['data']).setProperty(key,val);
+
+4./etc/config下增加内容   var sid = L.uci.add('packagename',type);
+                         L.uci.alpha_set('packagename',sid,option,val);
+                        
+5./etc/config下删除整某一个整体配置   L.uci.remove('packagename',sid);
+
+6./etc/config下删除某一个配置下的option   L.uci.alpha_set('packagename',sid,option,'');
+
+7./etc/config下设置    L.uci.alpha_set('packagename',sid,option,val);
+
+8.获取/etc/config内容  L.uci.sections('packagename',[.type]);
+
+9.保存设置  save: function() {
+		        var self = this;
+		        L.ui.loading(true);
+                L.uci.save().then(function() {
+                    if (L.globals.commit_button) {
+                        L.ui.loading(false);
+                        self.render()
+                    } else {
+                        L.commitFunc()
+                    }
+                    /*L.uci.changes().then(function(changes) {
+                        if (!$.isEmptyObject(changes)) {
+                            var commit_list = [];
+                            for (var key in changes) {
+                                if(key == 'tr069')
+                                    continue;
+                                commit_list.push(key);
+                            }
+                            L.uci.commit(commit_list).then(function() {
+                                L.system.initRestart('ddns').then(function() {
+                                    L.ui.loading(false)
+                                    self.render()
+                                })
+                            });
+                        } else {
+                            L.ui.loading(false);
+                        }
+                    })*/
+                });
+	        }
+
+10. 模板数据绑定 var template = $.templates("#temp"); template.link('#map',self._data,eventBindings)
+
+11.$.views.converters({}) 
+
+12. 重带 L.system.initRestart('minidlna')

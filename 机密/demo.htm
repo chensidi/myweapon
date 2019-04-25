@@ -1,0 +1,71 @@
+<div id="map"></div>
+<script id="temp" type="text/x-jsrender">
+    <h4 class="title-topic"><%:Storage Device Info%></h4>
+
+    <div class="row form-group">
+        <div class="col-xs-4">
+            <span class="ais-fiber-label"><%:Share Folders%> :</span>
+        </div>
+        <div class="col-md-6 col-offset-md-2 col-xs-8">
+            <div class="row">
+                {^{radiogroup show}}
+                    <div class="col-xs-12">
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio" value="0"><span class="ais-fiber-label-normal"><%:Share All Folders%></span>
+                        </label>
+                    </div>
+                    <div class="col-xs-12">
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio" value="1"><span class="ais-fiber-label-normal"><%:Custom Shared Folder%></span>
+                        </label>
+                    </div>
+                {{/radiogroup}}
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="col-xs-2 text-center"><%:Number%></th>
+                    <th class="col-xs-3 text-center"><%:Provider%></th>
+                    <th class="col-xs-3 text-center"><%:Product Type%></th>
+                    <th class="col-xs-3 text-center"><%:Capacity%></th>
+                </tr>
+            </thead>
+            <tbody>
+                {^{for table}}
+                    <tr>
+                        <td class="text-center">{{>#index+1}}</td>
+                        <td class="text-center">{{>manufacturer}}</td>
+                        <td class="text-center">{^{:(enabled == 1 ? 'Enabled' : 'Disabled')}}</td>
+                        <td class="text-center">
+                            <img style="cursor: pointer;" src="luci2/icons/ic_edit_24px.png" data-link="
+                                {on ~edit}
+                                id{:#index}
+                            ">
+                            <img style="cursor: pointer;" src="luci2/icons/ic_delete_24px.png" data-link="
+                                {on ~remove}
+                                id{:#index}
+                            ">
+                        </td>
+                    </tr>
+                {{/for}}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row form-group">
+        <div class="col-md-12 col-xs-12">
+            <div class="card-footer">
+                <button class="card-btn green" data-link='{on ~apply}'>
+                    <%:Apply%>
+                </button>
+                <button class="card-btn green" data-link='{on ~doRefresh}'>
+                    <%:Refresh%>
+                </button>
+            </div>
+        </div>
+    </div>
+</script>
