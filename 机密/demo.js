@@ -1,5 +1,5 @@
 L.ui.alpha_view.extend({
-    package: 'demopackage',
+    packages:['demopackage'],
     _data: {},
 
     demoMethod: L.rpc.declare({
@@ -119,7 +119,7 @@ L.ui.alpha_view.extend({
         temp.link('#map',self._data,eventBindings);
     },
 
-    exacute: function(){
+    execute: function(){
         var self = this;
         self.demoInit();
     }
