@@ -151,11 +151,11 @@ function log(obj){
 };
 //13.原生js的cookie技术
 const ck = {
-	setCookie:(name,val,time)=>{
+	setCookie:(key,val,time)=>{
 		var times = new Date();
 		time = time*24*60*60*1000;
 		var expires = times.setTime(Number(times.toGMTString()) + time);
-		document.cookie = `${name}=${val};expires=${expires}`;
+		document.cookie = `${key}=${val};expires=${expires}`;
 	},
 	getAllCookie:()=>{
 		var ckArr = document.cookie.split("; ");
@@ -166,13 +166,13 @@ const ck = {
 		})
 		return ckObj;
 	},
-	delCookie:(name)=>{
+	delCookie:(key)=>{
 		var times = new Date();
 		var expires = times.setTime(Number(times.toGMTString()) - 1000);
-		document.cookie = `${name}=1;expires=${expires}`;
+		document.cookie = `${key}=1;expires=${expires}`;
 	},
-	getOneCookie:function(name){
-		return this.getAllCookie()[name]
+	getOneCookie:function(key){
+		return this.getAllCookie()[key]
 	}
 }
 //14.总结
@@ -384,3 +384,44 @@ function isDottedHostname(host){
 	return reg.test(host);
 }
 
+function localCity(){//获取当地城市信息
+	$.ajax({
+		url: 'http://api.map.baidu.com/location/ip?ak=ia6HfFL660Bvh43exmH9LrI6',  
+		type: 'POST',  
+		dataType: 'jsonp',
+		success:function(data) {  
+			console.log(data);
+		}
+	});
+}
+
+function localIp(){//获取本地ip信息
+	$.ajax({
+		url: 'http://ip-api.com/json',
+		success: function(data){
+		   console.log(data);
+		},
+		type: 'GET',
+		dataType: 'JSON'
+	});
+}
+
+function savePoster(imgsrc, name){ //js保存图片
+            let image = new Image();
+            // 解决跨域 Canvas 污染问题
+            image.setAttribute("crossOrigin", "anonymous");
+            image.onload = function() {
+                let canvas = document.createElement("canvas");
+                canvas.width = image.width;
+                canvas.height = image.height;
+                let context = canvas.getContext("2d");
+                context.drawImage(image, 0, 0, image.width, image.height);
+                let url = canvas.toDataURL("image/png"); //得到图片的base64编码数据
+                let a = document.createElement("a"); // 生成一个a元素
+                let event = new MouseEvent("click"); // 创建一个单击事件
+                a.download = name || "photo"; // 设置图片名称
+                a.href = url; // 将生成的URL设置为a.href属性
+                a.dispatchEvent(event); // 触发a的单击事件
+            };
+            image.src = imgsrc;
+        }
