@@ -1,5 +1,5 @@
 (function(){
-
+    
     $.extend(String.prototype,{
         title: function(){
             return this.replace(/\b(\w)/ig,function($,$1){
@@ -27,18 +27,78 @@
             return this.split('').join(flag);
         },
 
-        max: function(start=0,end=this.lenght){
+        max: function(start=0,end=this.length){
             let temp = this.slice(start,end).split(''),
-                max = temp[0];
-            for(let item of temp){
+                max = temp[start];
+            for(let i = start; i < end; i ++){
+                let item = temp[i];
                 if(max < item){
                     max = item;
                 }
             }
             return max;
+        },
+
+        min: function(start=0,end=this.length){
+            let temp = this.slice(start,end).split(''),
+                min = temp[start];
+            for(let i = start; i < end; i ++){
+                let item = temp[i];
+                if(min > item){
+                    min = item;
+                }
+            }
+            return min;
+        },
+
+        zfill: function(len){
+            return this.padStart(len,0);
+        },
+
+        count: function(item){
+            let temp = this.split[''],count = 0;
+            for(let obj of temp){
+                if(obj === item){
+                    count ++;
+                }
+           } 
+           return count;
         }
     })
 
+    $.extend(Array.prototype,{
+        count: function(item){
+           let count = 0;
+           for(let obj of this){
+                if(obj === item){
+                    count ++;
+                }
+           } 
+           return count;
+        },
+
+        max: function(start=0,end=this.length){
+            let max = this[start];
+            for(let i = start; i < end; i ++){
+                let item = this[i];
+                if(max < item){
+                    max = item;
+                }
+            }
+            return max;
+        },
+
+        min: function(start=0,end=this.length){
+            let min = this[start];
+            for(let i = start; i < end; i ++){
+                let item = this[i];
+                if(min > item){
+                    min = item;
+                }
+            }
+            return min;
+        }   
+    })
    
 
     function Web(){
@@ -108,9 +168,7 @@
                     str += `${x}=${data[x]}&`
                 }
             }
-            str = str.split('');
-            str.pop();
-            str = str.join('');
+            str = str.slice(0,-1);
             if(method == "get"){
                 ajax.open('get',url+'?'+str);
                 ajax.send();
