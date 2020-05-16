@@ -1,1 +1,4 @@
 -webkit-overflow-scrolling: touch
+<form actions="javascript:;">
+	<input type="search" />
+</form>
