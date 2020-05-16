@@ -2,3 +2,4 @@
 <form actions="javascript:;">
 	<input type="search" />
 </form>
+bind
