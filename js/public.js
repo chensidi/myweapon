@@ -425,3 +425,21 @@ function savePoster(imgsrc, name){ //js保存图片
             };
             image.src = imgsrc;
         }
+
+function isWeChat(){ //判断是否微信PC端浏览器
+    var ua = window.navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+        var system = {
+            win: false,
+            mac: false
+        };
+        //检测平台
+        var p = navigator.platform;
+        system.win = p.indexOf("Win") == 0;
+        system.mac = p.indexOf("Mac") == 0;
+        if (system.win || system.mac) {
+            alert("在微信PC端上打开内置浏览器");
+        }else {
+            alert("非微信PC端上打开内置浏览器");
+        }
+}
